@@ -1,0 +1,19 @@
+{
+    "name": "quent/form_builder",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cha-Q",
+            "email": "quentin.chassaing@outlook.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.15",
+        "symfony/var-dumper": "^6.3",
+        "altorouter/altorouter": "^2.0"
+    }
+}
