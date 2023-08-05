@@ -41,4 +41,9 @@
             </div>";
             
         }
+
+        public function submit()
+        {
+            return "<button class='btn btn-primary' type='submit'> Validez</button>";
+        }
     }
