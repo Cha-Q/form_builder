@@ -1,1 +1,0 @@
-<h2>C'est bon ça marche</h2>

@@ -8,10 +8,10 @@
 </head>
 <body>
     <header>
-        <h1>Bonjour c'est la guewe ici</h1>
+        <h1>Formulaire</h1>
     </header>
 
-    <div class="container">
+    <div class="container w-50">
         <?= $content ?>
     </div>
     
