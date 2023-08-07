@@ -27,12 +27,23 @@
             return "<label  for='{$this->fieldName}'>$html</label>";
         }
 
+        
+        public function formInput(string $formElement, ...$values)
+        {
+            
+            return $this->$formElement(...$values);
+
+            // fonction pour générer dynamiquement les différents inputs
+            
+        }
+
         /**
          * @param $field string Name of the new input
          * @param $type string Value of the input's type
          * @param $value string Value of the new input
          * @return string
          */
+
 
         public function input(string $field, string $type, string $value = null):string
         {
