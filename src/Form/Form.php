@@ -18,7 +18,7 @@
         }
 
         /**
-         * 
+         * @return string
          * Generate a new label
          */
         public function label():string
@@ -27,15 +27,19 @@
             return "<label  for='{$this->fieldName}'>$html</label>";
         }
 
-        
-        public function formInput(string $formElement, ...$values)
-        {
-            
-            return $this->$formElement(...$values);
 
-            // fonction pour générer dynamiquement les différents inputs
-            
+        /**
+         * 
+         * @param $formElement string Name of the input
+         * @param ...$values mixed Mixed of all the input's params
+         * @return string
+         * Generate an input named by the formElement
+         */
+        public function formInput(string $formElement, ...$values)
+        { 
+            return $this->$formElement(...$values);
         }
+
 
         /**
          * @param $field string Name of the new input
@@ -43,8 +47,6 @@
          * @param $value string Value of the new input
          * @return string
          */
-
-
         public function input(string $field, string $type, string $value = null):string
         {
             $this->setField($field);
@@ -66,13 +68,14 @@
                 </div>";
         }
 
+
         /**
          * @var $field string Name of the new textarea
          * @param $type string Value of the input's textarea
          * @param $value string Value of the new textarea
          * @return string
+         * Generate a new textarea
          */
-
         public function textarea(string $field, string $value = null):string
         {
             $this->setField($field);
@@ -84,13 +87,14 @@
             
         }
 
+
         /**
          * Generate a select element with options
          * @param $field string Name of the select's field
          * @param $options array Names of the options fields and value
          * @return string
+         * Generate a new select
          */
-
         public function select(string $field, array $options = [])
         {
             $this->setField($field);
@@ -104,12 +108,13 @@
 
         }
 
+
         /**
          * Generate a select element with options
          * @param $options array Names of the options fields and values
          * @return string
+         * Generate new options for the radio's method
          */
-
         private function option(array $options = [])
         {
             $optionHtml = [];
@@ -121,10 +126,11 @@
         }
 
         /**
-         * 
+         * @param $radios array Array of radios values
+         * @param $field string 
          * @return string
+         * Generate radios 
          */
-
         public function radio(array $radios, string $field)
         {
             $radioHtml = [];
@@ -133,8 +139,6 @@
                 $radioHtml[] = 
                     "<div class='form-check'>
                         {$this->input($radio, 'radio', $field)}
-                    
-                    
                     </div>";
             }
             return implode("<br>",$radioHtml);;
